@@ -44,9 +44,14 @@ class Profile extends React.Component{
         return (
             <div>
 
+                
                 <header id='header' style={{backgroundColor:'#febbbb'}}>
-                <img className="ui avatar image" src="/images/2.jpg"></img>
-                나의 프로필 <i className="eye icon"></i>
+                <div id="myProfileDiv">
+                    
+                        <img className="ui avatar image" src="/images/2.jpg"></img>
+                        <button id="myProfileBtn" onClick={this.props.MyProfileClick}>{this.props.ButtonLabel}</button>
+                        <i className="eye icon"></i>
+                    </div>
                 </header>
 
                 <Paper >

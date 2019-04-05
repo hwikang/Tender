@@ -1,33 +1,44 @@
 import React from 'react';
+import './Total.css'
 import Match from './Match';
 import Profile from './Profile';
-import MyProfile from './MyProfile'
+import MyProfile from './MyProfile';
+
 class Total extends React.Component{
    state= {
-       bigScreen: 'match'  // 현재 보여줄 페이지를 뜻함
+       bigScreen: 'Match'  // 현재 보여줄 페이지를 뜻함
    }
     MyProfileClick = (e) =>{    
-       this.setState({bigScreen:'myprofile'})
-    } 
-    
+        console.log('noew bigscreen =',this.state.bigScreen)
+       if(this.state.bigScreen==='Match'){
+        this.setState({bigScreen:'MyProfile'})
+       }else if(this.state.bigScreen==='MyProfile'){
+        this.setState({bigScreen:'Match'})         
+       }
+    }  
     
     render(){
        // const myProfile = document.querySelector("#myProfile");
        // const bigScreen = document.querySelector("#bigScreen");
-        var bigScreen = <Match/>;   //어떤걸 빅스크린에 보여줄지
-        if(this.state.bigScreen==='match'){
+       
+
+        let bigScreen = <Match/>;   //어떤걸 빅스크린에 보여줄지
+        let ButtonLabel = 'MyProfile';
+        if(this.state.bigScreen==='Match'){
             bigScreen =  <Match/>;     
-        }else if(this.state.bigScreen==='myprofile'){
+            ButtonLabel = 'MyProfile';
+        }else if(this.state.bigScreen==='MyProfile'){
             bigScreen = <MyProfile/>;
+            ButtonLabel = 'Match';
         }
+        console.log("Buttonlabel=",ButtonLabel)
         return(
             <div className="ui grid">
-                <div id="edit" className="five wide column">
-                    <button id="myProfile" onClick={this.MyProfileClick}>MyProfile</button>
-                    <Profile/>
+                <div id="edit" className="five wide column">                    
+                    <Profile ButtonLabel={ButtonLabel} MyProfileClick={this.MyProfileClick}/>
                 </div>
                 <div className="eleven wide column" id="bigScreen">
-                {/* match or profile */}
+                {/* match or myprofile */}
                     {bigScreen}               
                 </div>
 
