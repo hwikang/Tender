@@ -1,15 +1,15 @@
 import React from 'react';
+import './Total.css'
 import Match from './Match';
 import MyProfile from './MyProfile'
+
 class Total extends React.Component{
    state= {
        bigScreen: 'match'  // 현재 보여줄 페이지를 뜻함
    }
-    MyProfileClick = (e) =>{
-    
+    MyProfileClick = (e) =>{    
        this.setState({bigScreen:'myprofile'})
-    } 
-    
+    }  
     
     render(){
        // const myProfile = document.querySelector("#myProfile");
@@ -22,17 +22,17 @@ class Total extends React.Component{
         }
         return(
             <div className="ui grid">
-            <div id="edit" className="five wide column">
-                <button id="myProfile" onClick={this.MyProfileClick}>MyProfile</button>
-
-            </div>
-            <div className="eleven wide column" id="bigScreen">
-            {/* match or profile */}
-                {bigScreen}               
-            </div>
-        </div>
-           
-        )
+                <div id="edit" className="five wide column">
+                    <div id="myProfileBtn">
+                        <button id="myProfile" onClick={this.MyProfileClick}>MyProfile</button>
+                    <div>
+                </div>
+                <div className="eleven wide column" id="bigScreen">
+                {/* match or profile */}
+                    {bigScreen}               
+                </div>
+            </div>           
+        ); {/*render*/}
     }
 }
 
