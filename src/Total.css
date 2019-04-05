@@ -1,4 +1,7 @@
-#myProfileBtn{
+#myProfileDiv{
     background-color:pink;
-    height:100px;
+    height:70px;
+}
+#myProfileDiv button{
+   
 }
