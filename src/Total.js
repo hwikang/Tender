@@ -1,14 +1,12 @@
 import React from 'react';
 import Match from './Match';
 import Profile from './Profile';
-import "semantic-ui-css/semantic.min.css"
 import MyProfile from './MyProfile'
 class Total extends React.Component{
    state= {
        bigScreen: 'match'  // 현재 보여줄 페이지를 뜻함
    }
-    MyProfileClick = (e) =>{
-    
+    MyProfileClick = (e) =>{    
        this.setState({bigScreen:'myprofile'})
     } 
     
